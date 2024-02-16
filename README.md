@@ -1,1 +1,1 @@
-# SortingAlgoEffectiveness
+# Sorting Algo Effectiveness
