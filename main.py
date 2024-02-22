@@ -1,5 +1,5 @@
 import numpy as np
-import timeit
+import time
 
 # Bubble Sort Implementation
 # Resource: https://www.geeksforgeeks.org/bubble-sort/
@@ -162,16 +162,17 @@ def radixSort(arr):
         countingSort(arr, exp)
         exp *= 10
 
-def doTest(scenario, func):
-    arr[100000] = {None}
+def fillBestCase(arr, length):
+    for x in range(length):
+        arr[x] = x
 
-    for x in range(100):
-        arr[x] = np.random.randint(1,100000)
+def fillAverageCase(arr, length):
+    for x in range(length):
+        arr[x] = np.random.randint(1, length)
 
-    
-    return timeit.timeit(func(arr))
-
-
+def fillWorstCase(arr, length):
+    for x in range(length):
+        arr[x] = length-x
 
 #############
 # Main Code #
@@ -189,7 +190,19 @@ if __name__ == "__main__":
         match quit:
             case 1:
                 scenario = int(input("Case Scenarios for Bubble Sort\n---------------\n1. Best Case\n2. Average Case\n3. Worst Case\n4. Exit bubble sort test\n\nSelect the case (1-4): "))
-                print(doTest(scenario, bubbleSort({0})))
+
+                match scenario:
+                    case 2:
+                        n = 100
+                        for _ in range(3):
+                            arr = [0] * n
+                            fillAverageCase(arr, n)
+
+                            start = time.time()
+                            bubbleSort(arr)
+                            end = time.time()
+                            print("For N = ", n, ", it takes ", end-start, " seconds")
+                            n*=10
 
             case 2:
                 scenario = input("Case Scenarios for Merge Sort\n---------------\n1. Best Case\n2. Average Case\n3. Worst Case\n4. Exit merge sort test\nSelect the case (1-4): ")
