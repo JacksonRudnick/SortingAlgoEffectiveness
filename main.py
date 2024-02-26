@@ -192,6 +192,17 @@ if __name__ == "__main__":
                 scenario = int(input("Case Scenarios for Bubble Sort\n---------------\n1. Best Case\n2. Average Case\n3. Worst Case\n4. Exit bubble sort test\n\nSelect the case (1-4): "))
 
                 match scenario:
+                    case 1:
+                        n = 100
+                        for _ in range(3):
+                            arr = [0] * n
+                            fillBestCase(arr, n)
+                            
+                            start = time.time();
+                            bubbleSort(arr)
+                            end = time.time()
+                            print("For N = ", n, ", it takes ", end-start, " seconds")
+                            n*=10
                     case 2:
                         n = 100
                         for _ in range(3):
@@ -202,20 +213,130 @@ if __name__ == "__main__":
                             bubbleSort(arr)
                             end = time.time()
                             print("For N = ", n, ", it takes ", end-start, " seconds")
+                            n*=10     
+                    case 3:
+                        n = 100
+                        for _ in range(3):
+                            arr = [0] * n
+                            fillWorstCase(arr, n)
+
+                            start = time.time()
+                            bubbleSort(arr)
+                            end = time.time()
+                            print("For N = ", n, ", it takes ", end-start, " seconds")
                             n*=10
 
             case 2:
                 scenario = input("Case Scenarios for Merge Sort\n---------------\n1. Best Case\n2. Average Case\n3. Worst Case\n4. Exit merge sort test\nSelect the case (1-4): ")
+                
+                match scenario:
+                    case 1:
+                        n = 100
+                        for _ in range(3):
+                            arr = [0] * n
+                            fillBestCase(arr, n)
+                            
+                            start = time.time();
+                            mergeSort(arr)
+                            end = time.time()
+                            print("For N = ", n, ", it takes ", end-start, " seconds")
+                            n*=10
+                    case 2:
+                        n = 100
+                        for _ in range(3):
+                            arr = [0] * n
+                            fillAverageCase(arr, n)
+
+                            start = time.time()
+                            mergeSort(arr)
+                            end = time.time()
+                            print("For N = ", n, ", it takes ", end-start, " seconds")
+                            n*=10     
+                    case 3:
+                        n = 100
+                        for _ in range(3):
+                            arr = [0] * n
+                            fillWorstCase(arr, n)
+
+                            start = time.time()
+                            mergeSort(arr)
+                            end = time.time()
+                            print("For N = ", n, ", it takes ", end-start, " seconds")
+                            n*=10
             case 3:
                 scenario = input("Case Scenarios for Quick Sort\n---------------\n1. Best Case\n2. Average Case\n3. Worst Case\n4. Exit quick sort test\nSelect the case (1-4): ")
+                
+                match scenario:
+                    case 1:
+                        n = 100
+                        for _ in range(3):
+                            arr = [0] * n
+                            fillBestCase(arr, n)
+                            
+                            start = time.time();
+                            quicksort(arr, 0, n-1)
+                            end = time.time()
+                            print("For N = ", n, ", it takes ", end-start, " seconds")
+                            n*=10
+                    case 2:
+                        n = 100
+                        for _ in range(3):
+                            arr = [0] * n
+                            fillAverageCase(arr, n)
+
+                            start = time.time()
+                            quicksort(arr, 0, n-1)
+                            end = time.time()
+                            print("For N = ", n, ", it takes ", end-start, " seconds")
+                            n*=10     
+                    case 3:
+                        n = 100
+                        for _ in range(3):
+                            arr = [0] * n
+                            fillWorstCase(arr, n)
+
+                            start = time.time()
+                            quicksort(arr, 0, n-1)
+                            end = time.time()
+                            print("For N = ", n, ", it takes ", end-start, " seconds")
+                            n*=10
             case 4:
                 scenario = input("Case Scenarios for Radix Sort\n---------------\n1. Best Case\n2. Average Case\n3. Worst Case\n4. Exit radix sort test\nSelect the case (1-4): ")
+                
+                match scenario:
+                    case 1:
+                        n = 100
+                        for _ in range(3):
+                            arr = [0] * n
+                            fillBestCase(arr, n)
+                            
+                            start = time.time();
+                            radixSort(arr)
+                            end = time.time()
+                            print("For N = ", n, ", it takes ", end-start, " seconds")
+                            n*=10
+                    case 2:
+                        n = 100
+                        for _ in range(3):
+                            arr = [0] * n
+                            fillAverageCase(arr, n)
 
+                            start = time.time()
+                            radixSort(arr)
+                            end = time.time()
+                            print("For N = ", n, ", it takes ", end-start, " seconds")
+                            n*=10     
+                    case 3:
+                        n = 100
+                        for _ in range(3):
+                            arr = [0] * n
+                            fillWorstCase(arr, n)
 
-
-
-
-
+                            start = time.time()
+                            radixSort(arr)
+                            end = time.time()
+                            print("For N = ", n, ", it takes ", end-start, " seconds")
+                            n*=10
 
 
     print("Bye!")
