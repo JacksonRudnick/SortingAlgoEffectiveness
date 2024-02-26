@@ -236,7 +236,22 @@ if __name__ == "__main__":
                             end = time.time()
                             print("For N = ", n, ", it takes ", end-start, " seconds")
                             completeString += ("Bubble Sort - N = " + str(n) + ", T = " + str(end-start) + "\n")
-                            n*=10     
+                            n*=10
+
+                        while 1 == 1:
+                            if input("Do you want to input another N (Y/N)? ") == "Y":
+                                n = int(input("What is the N? "))
+                                arr = [0] * n
+                                fillAverageCase(arr, n)
+
+                                start = time.time()
+                                bubbleSort(arr)
+                                end = time.time()
+                                print("For N = ", n, ", it takes ", end-start, " seconds")
+                                completeString += ("Bubble Sort - N = " + str(n) + ", T = " + str(end-start) + "\n")
+                            else:
+                                break 
+
                     case 3:
                         n = 100
                         for _ in range(3):
@@ -249,6 +264,20 @@ if __name__ == "__main__":
                             print("For N = ", n, ", it takes ", end-start, " seconds")
                             completeString += ("Bubble Sort - N = " + str(n) + ", T = " + str(end-start) + "\n")
                             n*=10
+
+                        while 1 == 1:
+                            if input("Do you want to input another N (Y/N)? ") == "Y":
+                                n = int(input("What is the N? "))
+                                arr = [0] * n
+                                fillWorstCase(arr, n)
+
+                                start = time.time()
+                                bubbleSort(arr)
+                                end = time.time()
+                                print("For N = ", n, ", it takes ", end-start, " seconds")
+                                completeString += ("Bubble Sort - N = " + str(n) + ", T = " + str(end-start) + "\n")
+                            else:
+                                break
 
             case 2:
                 scenario = int(input("Case Scenarios for Merge Sort\n---------------\n1. Best Case\n2. Average Case\n3. Worst Case\n4. Exit merge sort test\nSelect the case (1-4): "))
@@ -266,6 +295,21 @@ if __name__ == "__main__":
                             print("For N = ", n, ", it takes ", end-start, " seconds")
                             completeString += ("Merge Sort - N = " + str(n) + ", T = " + str(end-start) + "\n")
                             n*=10
+
+                        while 1 == 1:
+                            if input("Do you want to input another N (Y/N)? ") == "Y":
+                                n = int(input("What is the N? "))
+                                arr = [0] * n
+                                fillBestCase(arr, n)
+
+                                start = time.time()
+                                mergeSort(arr)
+                                end = time.time()
+                                print("For N = ", n, ", it takes ", end-start, " seconds")
+                                completeString += ("Merge Sort - N = " + str(n) + ", T = " + str(end-start) + "\n")
+                            else:
+                                break
+
                     case 2:
                         n = 100
                         for _ in range(3):
@@ -278,6 +322,21 @@ if __name__ == "__main__":
                             print("For N = ", n, ", it takes ", end-start, " seconds")
                             completeString += ("Merge Sort - N = " + str(n) + ", T = " + str(end-start) + "\n")
                             n*=10
+
+                        while 1 == 1:
+                            if input("Do you want to input another N (Y/N)? ") == "Y":
+                                n = int(input("What is the N? "))
+                                arr = [0] * n
+                                fillAverageCase(arr, n)
+
+                                start = time.time()
+                                mergeSort(arr)
+                                end = time.time()
+                                print("For N = ", n, ", it takes ", end-start, " seconds")
+                                completeString += ("Merge Sort - N = " + str(n) + ", T = " + str(end-start) + "\n")
+                            else:
+                                break
+
                     case 3:
                         n = 100
                         for _ in range(3):
@@ -290,6 +349,21 @@ if __name__ == "__main__":
                             print("For N = ", n, ", it takes ", end-start, " seconds")
                             completeString += ("Merge Sort - N = " + str(n) + ", T = " + str(end-start) + "\n")
                             n*=10
+
+                        while 1 == 1:
+                            if input("Do you want to input another N (Y/N)? ") == "Y":
+                                n = int(input("What is the N? "))
+                                arr = [0] * n
+                                fillWorseCase(arr, n)
+
+                                start = time.time()
+                                mergeSort(arr)
+                                end = time.time()
+                                print("For N = ", n, ", it takes ", end-start, " seconds")
+                                completeString += ("Merge Sort - N = " + str(n) + ", T = " + str(end-start) + "\n")
+                            else:
+                                break
+
             case 3:
                 scenario = int(input("Case Scenarios for Quick Sort\n---------------\n1. Best Case\n2. Average Case\n3. Worst Case\n4. Exit quick sort test\nSelect the case (1-4): "))
                 
@@ -306,6 +380,21 @@ if __name__ == "__main__":
                             print("For N = ", n, ", it takes ", end-start, " seconds")
                             completeString += ("Quick Sort - N = " + str(n) + ", T = " + str(end-start) + "\n")
                             n*=10
+
+                        while 1 == 1:
+                            if input("Do you want to input another N (Y/N)? ") == "Y":
+                                n = int(input("What is the N? "))
+                                arr = [0] * n
+                                fillBestCase(arr, n)
+
+                                start = time.time()
+                                quicksort(arr)
+                                end = time.time()
+                                print("For N = ", n, ", it takes ", end-start, " seconds")
+                                completeString += ("Quick Sort - N = " + str(n) + ", T = " + str(end-start) + "\n")
+                            else:
+                                break
+
                     case 2:
                         n = 100
                         for _ in range(3):
@@ -317,7 +406,22 @@ if __name__ == "__main__":
                             end = time.time()
                             print("For N = ", n, ", it takes ", end-start, " seconds")
                             completeString += ("Quick Sort - N = " + str(n) + ", T = " + str(end-start) + "\n")
-                            n*=10     
+                            n*=10
+                    
+                        while 1 == 1:
+                            if input("Do you want to input another N (Y/N)? ") == "Y":
+                                n = int(input("What is the N? "))
+                                arr = [0] * n
+                                fillAverageCase(arr, n)
+
+                                start = time.time()
+                                quicksort(arr)
+                                end = time.time()
+                                print("For N = ", n, ", it takes ", end-start, " seconds")
+                                completeString += ("Quick Sort - N = " + str(n) + ", T = " + str(end-start) + "\n")
+                            else:
+                                break
+
                     case 3:
                         n = 100
                         for _ in range(3):
@@ -330,6 +434,21 @@ if __name__ == "__main__":
                             print("For N = ", n, ", it takes ", end-start, " seconds")
                             completeString += ("Quick Sort - N = " + str(n) + ", T = " + str(end-start) + "\n")
                             n*=10
+
+                        while 1 == 1:
+                            if input("Do you want to input another N (Y/N)? ") == "Y":
+                                n = int(input("What is the N? "))
+                                arr = [0] * n
+                                fillWorstCase(arr, n)
+
+                                start = time.time()
+                                quicksort(arr)
+                                end = time.time()
+                                print("For N = ", n, ", it takes ", end-start, " seconds")
+                                completeString += ("Quick Sort - N = " + str(n) + ", T = " + str(end-start) + "\n")
+                            else:
+                                break
+
             case 4:
                 scenario = int(input("Case Scenarios for Radix Sort\n---------------\n1. Best Case\n2. Average Case\n3. Worst Case\n4. Exit radix sort test\nSelect the case (1-4): "))
                 
@@ -346,6 +465,21 @@ if __name__ == "__main__":
                             print("For N = ", n, ", it takes ", end-start, " seconds")
                             completeString += ("Radix Sort - N = " + str(n) + ", T = " + str(end-start) + "\n")
                             n*=10
+
+                        while 1 == 1:
+                            if input("Do you want to input another N (Y/N)? ") == "Y":
+                                n = int(input("What is the N? "))
+                                arr = [0] * n
+                                fillBestCase(arr, n)
+
+                                start = time.time()
+                                radixsort(arr)
+                                end = time.time()
+                                print("For N = ", n, ", it takes ", end-start, " seconds")
+                                completeString += ("Radix Sort - N = " + str(n) + ", T = " + str(end-start) + "\n")
+                            else:
+                                break
+
                     case 2:
                         n = 100
                         for _ in range(3):
@@ -357,7 +491,22 @@ if __name__ == "__main__":
                             end = time.time()
                             print("For N = ", n, ", it takes ", end-start, " seconds")
                             completeString += ("Radix Sort - N = " + str(n) + ", T = " + str(end-start) + "\n")
-                            n*=10     
+                            n*=10
+
+                        while 1 == 1:
+                            if input("Do you want to input another N (Y/N)? ") == "Y":
+                                n = int(input("What is the N? "))
+                                arr = [0] * n
+                                fillAverageCase(arr, n)
+
+                                start = time.time()
+                                radixSort(arr)
+                                end = time.time()
+                                print("For N = ", n, ", it takes ", end-start, " seconds")
+                                completeString += ("Radix Sort - N = " + str(n) + ", T = " + str(end-start) + "\n")
+                            else:
+                                break
+
                     case 3:
                         n = 100
                         for _ in range(3):
@@ -370,6 +519,21 @@ if __name__ == "__main__":
                             print("For N = ", n, ", it takes ", end-start, " seconds")
                             completeString += ("Radix Sort - N = " + str(n) + ", T = " + str(end-start) + "\n")
                             n*=10
+
+                        while 1 == 1:
+                            if input("Do you want to input another N (Y/N)? ") == "Y":
+                                n = int(input("What is the N? "))
+                                arr = [0] * n
+                                fillWorstCase(arr, n)
+
+                                start = time.time()
+                                radixSort(arr)
+                                end = time.time()
+                                print("For N = ", n, ", it takes ", end-start, " seconds")
+                                completeString += ("Radix Sort - N = " + str(n) + ", T = " + str(end-start) + "\n")
+                            else:
+                                break
+
 
 
     file.writelines(completeString)
