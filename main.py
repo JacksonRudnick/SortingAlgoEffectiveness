@@ -204,12 +204,27 @@ if __name__ == "__main__":
                             arr = [0] * n
                             fillBestCase(arr, n)
                             
-                            start = time.time();
+                            start = time.time()
                             bubbleSort(arr)
                             end = time.time()
                             print("For N = ", n, ", it takes ", end-start, " seconds")
                             completeString += ("Bubble Sort - N = " + str(n) + ", T = " + str(end-start) + "\n")
                             n*=10
+
+                        while 1 == 1:
+                            if input("Do you want to input another N (Y/N)? ") == "Y":
+                                n = int(input("What is the N? "))
+                                arr = [0] * n
+                                fillBestCase(arr, n)
+
+                                start = time.time()
+                                bubbleSort(arr)
+                                end = time.time()
+                                print("For N = ", n, ", it takes ", end-start, " seconds")
+                                completeString += ("Bubble Sort - N = " + str(n) + ", T = " + str(end-start) + "\n")
+                            else:
+                                break
+    
                     case 2:
                         n = 100
                         for _ in range(3):
