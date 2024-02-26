@@ -184,6 +184,9 @@ if __name__ == "__main__":
 
     print("Welcome to the test suite of selected sorting algorithms!")
 
+    file = open('output.txt', 'w')
+    completeString = ""
+
     quit = 0
     scenario = 0
 
@@ -205,6 +208,7 @@ if __name__ == "__main__":
                             bubbleSort(arr)
                             end = time.time()
                             print("For N = ", n, ", it takes ", end-start, " seconds")
+                            completeString += ("Bubble Sort - N = " + str(n) + ", T = " + str(end-start) + "\n")
                             n*=10
                     case 2:
                         n = 100
@@ -216,6 +220,7 @@ if __name__ == "__main__":
                             bubbleSort(arr)
                             end = time.time()
                             print("For N = ", n, ", it takes ", end-start, " seconds")
+                            completeString += ("Bubble Sort - N = " + str(n) + ", T = " + str(end-start) + "\n")
                             n*=10     
                     case 3:
                         n = 100
@@ -227,6 +232,7 @@ if __name__ == "__main__":
                             bubbleSort(arr)
                             end = time.time()
                             print("For N = ", n, ", it takes ", end-start, " seconds")
+                            completeString += ("Bubble Sort - N = " + str(n) + ", T = " + str(end-start) + "\n")
                             n*=10
 
             case 2:
@@ -243,6 +249,7 @@ if __name__ == "__main__":
                             mergeSort(arr)
                             end = time.time()
                             print("For N = ", n, ", it takes ", end-start, " seconds")
+                            completeString += ("Merge Sort - N = " + str(n) + ", T = " + str(end-start) + "\n")
                             n*=10
                     case 2:
                         n = 100
@@ -254,6 +261,7 @@ if __name__ == "__main__":
                             mergeSort(arr)
                             end = time.time()
                             print("For N = ", n, ", it takes ", end-start, " seconds")
+                            completeString += ("Merge Sort - N = " + str(n) + ", T = " + str(end-start) + "\n")
                             n*=10
                     case 3:
                         n = 100
@@ -265,6 +273,7 @@ if __name__ == "__main__":
                             mergeSort(arr)
                             end = time.time()
                             print("For N = ", n, ", it takes ", end-start, " seconds")
+                            completeString += ("Merge Sort - N = " + str(n) + ", T = " + str(end-start) + "\n")
                             n*=10
             case 3:
                 scenario = int(input("Case Scenarios for Quick Sort\n---------------\n1. Best Case\n2. Average Case\n3. Worst Case\n4. Exit quick sort test\nSelect the case (1-4): "))
@@ -280,6 +289,7 @@ if __name__ == "__main__":
                             quicksort(arr, 0, n-1)
                             end = time.time()
                             print("For N = ", n, ", it takes ", end-start, " seconds")
+                            completeString += ("Quick Sort - N = " + str(n) + ", T = " + str(end-start) + "\n")
                             n*=10
                     case 2:
                         n = 100
@@ -291,6 +301,7 @@ if __name__ == "__main__":
                             quicksort(arr, 0, n-1)
                             end = time.time()
                             print("For N = ", n, ", it takes ", end-start, " seconds")
+                            completeString += ("Quick Sort - N = " + str(n) + ", T = " + str(end-start) + "\n")
                             n*=10     
                     case 3:
                         n = 100
@@ -302,6 +313,7 @@ if __name__ == "__main__":
                             quicksort(arr, 0, n-1)
                             end = time.time()
                             print("For N = ", n, ", it takes ", end-start, " seconds")
+                            completeString += ("Quick Sort - N = " + str(n) + ", T = " + str(end-start) + "\n")
                             n*=10
             case 4:
                 scenario = int(input("Case Scenarios for Radix Sort\n---------------\n1. Best Case\n2. Average Case\n3. Worst Case\n4. Exit radix sort test\nSelect the case (1-4): "))
@@ -317,6 +329,7 @@ if __name__ == "__main__":
                             radixSort(arr)
                             end = time.time()
                             print("For N = ", n, ", it takes ", end-start, " seconds")
+                            completeString += ("Radix Sort - N = " + str(n) + ", T = " + str(end-start) + "\n")
                             n*=10
                     case 2:
                         n = 100
@@ -328,6 +341,7 @@ if __name__ == "__main__":
                             radixSort(arr)
                             end = time.time()
                             print("For N = ", n, ", it takes ", end-start, " seconds")
+                            completeString += ("Radix Sort - N = " + str(n) + ", T = " + str(end-start) + "\n")
                             n*=10     
                     case 3:
                         n = 100
@@ -339,7 +353,11 @@ if __name__ == "__main__":
                             radixSort(arr)
                             end = time.time()
                             print("For N = ", n, ", it takes ", end-start, " seconds")
+                            completeString += ("Radix Sort - N = " + str(n) + ", T = " + str(end-start) + "\n")
                             n*=10
 
+
+    file.writelines(completeString)
+    file.close()
 
     print("Bye!")
