@@ -180,51 +180,85 @@ def fillWorstCase(arr, length):
 #############
 
 if __name__ == "__main__":
+    #Increase python recursion limit since python is rude
     sys.setrecursionlimit(100000)
 
+    #Print welcome message
     print("Welcome to the test suite of selected sorting algorithms!")
 
+    #Open the output file and initialize the string to add everything to
     file = open('output.txt', 'w')
     completeString = ""
 
+    #Control variables
     quit = 0
     scenario = 0
 
+    #Main loop checking whether the user wants to quit or not
     while quit != 5:
+        #Get the users choice
         quit = int(input("Select the sorting algorithm you want to test.\n-------------------------\n1. Bubble Sort\n2. Merge Sort\n3. Quick Sort\n4. Radix Sort\n5. Exit\n\nSelect a sorting algorithm (1-5): "))
 
+        #Matching that variable to see what sort they would like to test
         match quit:
+            #Case 1 is for the Bubble Sort Method
             case 1:
+                #Get the user's wanted scenario
                 scenario = int(input("Case Scenarios for Bubble Sort\n---------------\n1. Best Case\n2. Average Case\n3. Worst Case\n4. Exit bubble sort test\n\nSelect the case (1-4): "))
 
+                #Match the user's inputted scenario
                 match scenario:
+                    #Case 1 is for Best Case Array Sort
                     case 1:
+                        #Set length of array
                         n = 100
+                        
+                        #Base case loop 
                         for _ in range(3):
+                            #Initialize array with n length
                             arr = [0] * n
+                            #Fill array with best case
                             fillBestCase(arr, n)
                             
+                            #Test the sort
                             start = time.time()
                             bubbleSort(arr)
                             end = time.time()
+                            
+                            #Print results and input them into a file
                             print("For N = ", n, ", it takes ", end-start, " seconds")
                             completeString += ("Bubble Sort - N = " + str(n) + ", T = " + str(end-start) + "\n")
+                            
+                            #Increment array size
                             n*=10
 
+                        #Ask the user if they want to input their own size
+                        #This assumes that the user wants to test the same case 
+                        #Whether that be best, average, or worst
+                        #This is the loop for it to happen multiple times
                         while 1 == 1:
+                            #Ask if the user wants to input another
                             if input("Do you want to input another N (Y/N)? ") == "Y":
+                                #Ask the user for the size of N
                                 n = int(input("What is the N? "))
+                                #Initialize the size of the array to N
                                 arr = [0] * n
+                                #Fill the array with Best case in relation to size n
                                 fillBestCase(arr, n)
 
+                                #Test the sort
                                 start = time.time()
                                 bubbleSort(arr)
                                 end = time.time()
+
+                                #Print the results and input them into a file
                                 print("For N = ", n, ", it takes ", end-start, " seconds")
                                 completeString += ("Bubble Sort - N = " + str(n) + ", T = " + str(end-start) + "\n")
+                            #If the user doesn't want to input their own values
+                            #Break from the while loop
                             else:
                                 break
-    
+                    #This follows the same pattern where this is the average case for bubble sort
                     case 2:
                         n = 100
                         for _ in range(3):
@@ -251,7 +285,7 @@ if __name__ == "__main__":
                                 completeString += ("Bubble Sort - N = " + str(n) + ", T = " + str(end-start) + "\n")
                             else:
                                 break 
-
+                    #This follows the same pattern where this is the worst case for bubble sort
                     case 3:
                         n = 100
                         for _ in range(3):
@@ -278,11 +312,12 @@ if __name__ == "__main__":
                                 completeString += ("Bubble Sort - N = " + str(n) + ", T = " + str(end-start) + "\n")
                             else:
                                 break
-
+            #This is the case for Merge Sort
             case 2:
                 scenario = int(input("Case Scenarios for Merge Sort\n---------------\n1. Best Case\n2. Average Case\n3. Worst Case\n4. Exit merge sort test\nSelect the case (1-4): "))
                 
                 match scenario:
+                    #This follows the same pattern where it is the best case for Merge Sort
                     case 1:
                         n = 100
                         for _ in range(3):
@@ -309,7 +344,7 @@ if __name__ == "__main__":
                                 completeString += ("Merge Sort - N = " + str(n) + ", T = " + str(end-start) + "\n")
                             else:
                                 break
-
+                    #This follows the same pattern where it is the average case for Merge Sort
                     case 2:
                         n = 100
                         for _ in range(3):
@@ -336,7 +371,7 @@ if __name__ == "__main__":
                                 completeString += ("Merge Sort - N = " + str(n) + ", T = " + str(end-start) + "\n")
                             else:
                                 break
-
+                    #This follows the same pattern where it is the worst case for Merge Sort
                     case 3:
                         n = 100
                         for _ in range(3):
@@ -363,11 +398,12 @@ if __name__ == "__main__":
                                 completeString += ("Merge Sort - N = " + str(n) + ", T = " + str(end-start) + "\n")
                             else:
                                 break
-
+            #This is the quick sort case
             case 3:
                 scenario = int(input("Case Scenarios for Quick Sort\n---------------\n1. Best Case\n2. Average Case\n3. Worst Case\n4. Exit quick sort test\nSelect the case (1-4): "))
                 
                 match scenario:
+                    #This follows the same pattern where it is the best case for quick sort
                     case 1:
                         n = 100
                         for _ in range(3):
@@ -394,7 +430,7 @@ if __name__ == "__main__":
                                 completeString += ("Quick Sort - N = " + str(n) + ", T = " + str(end-start) + "\n")
                             else:
                                 break
-
+                    #This follows the same pattern where it is the average case for quick sort
                     case 2:
                         n = 100
                         for _ in range(3):
@@ -421,7 +457,7 @@ if __name__ == "__main__":
                                 completeString += ("Quick Sort - N = " + str(n) + ", T = " + str(end-start) + "\n")
                             else:
                                 break
-
+                    #This follows the same pattern where it is the worst case for quick sort
                     case 3:
                         n = 100
                         for _ in range(3):
@@ -448,11 +484,12 @@ if __name__ == "__main__":
                                 completeString += ("Quick Sort - N = " + str(n) + ", T = " + str(end-start) + "\n")
                             else:
                                 break
-
+            #This is the case for Radix sort
             case 4:
                 scenario = int(input("Case Scenarios for Radix Sort\n---------------\n1. Best Case\n2. Average Case\n3. Worst Case\n4. Exit radix sort test\nSelect the case (1-4): "))
                 
                 match scenario:
+                    #This follows the same pattern where it is the best case for Radix Sort
                     case 1:
                         n = 100
                         for _ in range(3):
@@ -479,7 +516,7 @@ if __name__ == "__main__":
                                 completeString += ("Radix Sort - N = " + str(n) + ", T = " + str(end-start) + "\n")
                             else:
                                 break
-
+                    #This follows the same pattern where it is the average case for Radix Sort
                     case 2:
                         n = 100
                         for _ in range(3):
@@ -506,7 +543,7 @@ if __name__ == "__main__":
                                 completeString += ("Radix Sort - N = " + str(n) + ", T = " + str(end-start) + "\n")
                             else:
                                 break
-
+                    #This follows the same pattern where it is the worst case for Radix Sort
                     case 3:
                         n = 100
                         for _ in range(3):
@@ -535,8 +572,9 @@ if __name__ == "__main__":
                                 break
 
 
-
+    #Write the results to the file
     file.writelines(completeString)
     file.close()
-
+    
+    #Show closing statement
     print("Bye!")
